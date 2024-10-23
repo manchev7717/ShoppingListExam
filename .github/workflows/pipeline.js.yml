@@ -14,10 +14,10 @@ jobs:
     steps:
     - name: Checkout the code
       uses: actions/checkout@v4
-    - name: Use Node.js version 20
+    - name: Use Node.js version 18
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 20.x
         cache: 'npm'
     - name: Display my name 
       run: echo nikolay_manchev
@@ -25,6 +25,8 @@ jobs:
       run: npm install
     - name: Run Unit tests
       run: npm run test:unit
+    - name: Run the app
+      run: npm start
     - name: Install Playwright browsers
       run: npx playwright install
     - name: Run Ui tests
