@@ -19,13 +19,13 @@ jobs:
       with:
         node-version: 20.x
         cache: 'npm'
-    - name: Install Playwright browsers
-      run: npx playwright install
     - name: Display my name 
       run: echo nikolay_manchev
     - name: Install dependencies
       run: npm install
     - name: Run Unit tests
       run: npm run test:unit
+    - name: Install Playwright browsers
+      run: npx playwright install
     - name: Run Ui tests
       run: npm run test:ui
